@@ -1,0 +1,21 @@
+
+---
+- hosts: localhost
+  become: True
+  tasks:
+    - name: remove discover package
+      apt:
+        pkg: discover
+        state: absent
+        purge: yes
+    - name: Add apt-repo for apt-fast stable
+      apt_repository:
+        repo: ppa:apt-fast/stable
+        state: present
+        update_cache: True
+        validate_certs: False
+    - name: Install apt-fast from ppa repo
+      apt:
+         pkg: apt-fast
+         state: present
+         update_cache: yes

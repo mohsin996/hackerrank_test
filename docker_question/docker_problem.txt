@@ -1,0 +1,4 @@
+Problem:
+
+#1 - run a container with name 'my-container' of latest tagged nginx image in detached background mode without pseudo tty terminal
+#2 - update the script.sh file with the docker commands to expose port 8000 so that wget -qO- http://localhost:8000 gives ngnix welcome page

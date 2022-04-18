@@ -1,0 +1,5 @@
+Problem:
+
+#1 - install hasicorp/null package with version contraint 2.1.0
+#2 - Define a variable in the main.tf for which the value will get set from the environment variable
+#3 - Use resource local_file with file path as /run/secret/ with value of the variable defined above

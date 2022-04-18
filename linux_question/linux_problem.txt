@@ -1,0 +1,4 @@
+Problem:
+
+#1 - untar the archive.tar.gz file in the current directory
+#2 - From all the access log files print only the data which having IP address (non empty) field and redirect output to /tmp/access.log file

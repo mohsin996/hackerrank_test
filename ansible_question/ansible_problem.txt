@@ -1,0 +1,34 @@
+#1 - remove and purge the discover package using apt module
+#2 - add apt-repo 'ppa:apt-fast/stable' and install apt-fast package using apt and apt-repository module
+
+
+
+Commands to check the listed packages
+$ dpkg -L discover
+$ apt list --installed | grep -i discover
+#to check the list of  repositories in list.d 
+$ ls /etc/apt/sources.list.d/
+
+
+
+Sample code for nginx
+
+
+# always try to use HTTPS. I'm not sure why the nginx folks don't provide it.
+- name: add nginx apt-key
+  apt_key: 
+    url: http://nginx.org/keys/nginx_signing.key 
+    state: present 
+
+- name: add nginx apt repository
+  apt_repository: 
+    repo: 'deb http://nginx.org/packages/mainline/ubuntu/ xenial nginx' 
+    state: present 
+    filename: nginx 
+    update_cache: yes
+
+- name: install nginx
+  apt: 
+    name: nginx
+    state: present
+    update_cache: yes
